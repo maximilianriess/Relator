@@ -1,0 +1,2 @@
+# Relator
+MantisBT Plugin Relator
