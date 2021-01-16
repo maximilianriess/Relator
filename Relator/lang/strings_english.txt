@@ -1,0 +1,27 @@
+<?php
+
+# Author: M.Riess; Riess Business Group GmbH (info@riess-group.de)
+# Relator for MantisBT is free software:
+# you can redistribute it and/or modify it under the terms of the GNU
+# General Public License as published by the Free Software Foundation,
+# either version 2 of the License, or (at your option) any later version.
+#
+# Relator plugin for MantisBT is distributed in the hope
+# that it will be useful, but WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Relator plugin for MantisBT.
+# If not, see <http://www.gnu.org/licenses/>.
+
+$s_plugin_Relator_description = 'The plugin implements a live search for related issues to support easy relation creation.';
+
+$s_plugin_Relator_related_issue_list_found = 'Searchresults for <b> %1s </b> located in project(s): <b> %2s </b>';
+$s_plugin_Relator_related_issue_list_nores = 'Search for <b> %1s </b> located in project(s): <b> %2s </b> yielded no results.';
+$s_plugin_Relator_any_project              = 'any project';
+
+$s_plugin_Relator_info_related_issue_list = '* Just type to search in current project. ';
+$s_plugin_Relator_info_related_issue_list.= 'Use brackets to search in specific project, ';
+$s_plugin_Relator_info_related_issue_list.= 'e.g. <i>[projectname]searchvalue</i> or shorter <i>[proje searchvalue</i>.';
+

@@ -1,0 +1,27 @@
+<?php
+
+# Author: M.Riess; Riess Business Group GmbH (info@riess-group.de)
+# Relator for MantisBT is free software:
+# you can redistribute it and/or modify it under the terms of the GNU
+# General Public License as published by the Free Software Foundation,
+# either version 2 of the License, or (at your option) any later version.
+#
+# Relator plugin for MantisBT is distributed in the hope
+# that it will be useful, but WITHOUT ANY WARRANTY; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Relator plugin for MantisBT.
+# If not, see <http://www.gnu.org/licenses/>.
+
+$s_plugin_Relator_description = 'Dieses Plugin erlaubt das Erzeugen von Eintrags-Beziehungen anhand der Ticket-Zusammenfassung anstatt der Eingabe der Ticket-ID.';
+
+$s_plugin_Relator_related_issue_list_found = 'Suchergebnisse f&uuml;r <b> %1s </b> in Projekt(en): <b> %2s </b>';
+$s_plugin_Relator_related_issue_list_nores = 'Die Suche nach<b> %1s </b> in Projekt(en) <b> %2s </b> ergab keine Ergebnisse.';
+$s_plugin_Relator_any_project              = 'alle Projekte';
+
+$s_plugin_Relator_info_related_issue_list = '* Für schnelle Suche, Begriffe aus der Zusammenfassung eingeben. <br>&nbsp;&nbsp;&nbsp;';
+$s_plugin_Relator_info_related_issue_list.= 'Die Suche in anderen Projekten erfolgt über eckige Klammern, ';
+$s_plugin_Relator_info_related_issue_list.= 'z.B. <i>[projektname]suchbegriff</i> oder die Kurzform <i>[proje suchbegr</i>.';
+
