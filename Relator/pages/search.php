@@ -17,10 +17,7 @@
 
 
 function string_get_onclick($issue_id) {
-	$tag = "";
-	$tag.= "document.getElementsByName('dest_bug_id')[0].value = '";
-	$tag.= $issue_id;
-	$tag.= "'; $('.search_result').remove(); return false;";
+	$tag = "related_issue_selected(" . $issue_id . "); return false;";
 	return $tag;
 }
 

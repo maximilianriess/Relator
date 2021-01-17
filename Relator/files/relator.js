@@ -88,3 +88,11 @@ function search_request(search_string, token) {
 }
 
 
+function related_issue_selected(issue_id) {
+        document.getElementsByName('dest_bug_id')[0].value = issue_id;
+        $('.search_result').remove(); 
+        return false;
+}
+
+
+

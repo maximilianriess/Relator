@@ -36,7 +36,12 @@ class RelatorPlugin extends MantisPlugin {
         return array(
 		'EVENT_LAYOUT_RESOURCES' => 'resources',
 		'EVENT_VIEW_BUG_DETAILS' => 'viewpage',
+		'EVENT_CORE_HEADERS' => 'headers',
         );
+    }
+
+    function headers() {
+		http_csp_add( 'script-src', "'unsafe-inline'" );
     }
 
     function resources() {
