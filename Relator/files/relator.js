@@ -18,7 +18,7 @@ var display_request = 0;
 var current_request = 0;
 var loading_img;
 var summary_input;
-
+var src_bug_id;
 
 $(document).ready(function () {
 
@@ -33,21 +33,23 @@ $(document).ready(function () {
 
     summary_input = document.getElementsByName('dest_bug_id')[0];
 
+    src_bug_id = document.getElementsByName('src_bug_id')[0];
+
     var bug_relationship_add_token = document.getElementsByName('bug_relationship_add_token')[0];
 
     if (summary_input.value.length > 0) {
-        search_request(summary_input.value, bug_relationship_add_token.value);
+        search_request(summary_input.value, src_bug_id.value, bug_relationship_add_token.value);
     }
     var current_timer = 0;
     $('[name=dest_bug_id]').bind("input", function () {
         if (this.value.length > 0 && this.value.trim() != 0) {
-
             loading_img.removeAttribute('hidden');
             clearTimeout(current_timer);
             var search_string = this.value;
             var token = $('[name=bug_relationship_add_token]').val();
+            var srcid = $('[name=src_bug_id]').val();
             current_timer = setTimeout(function () {
-                search_request(search_string, token);
+                search_request(search_string, srcid, token);
             }, 700);
         }
 
@@ -57,13 +59,14 @@ $(document).ready(function () {
     })
 });
 
-function search_request(search_string, token) {
+function search_request(search_string, src_bug_id, token) {
     current_request++;
     $.ajax({
         type: 'post',
         url: 'plugin.php?page=Relator/search',
         data: {
             'referal': search_string,
+            'src_bug_id': src_bug_id,
             'bug_relationship_add_token': token,
             'request_id': current_request,
         },

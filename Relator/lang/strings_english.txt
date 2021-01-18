@@ -17,7 +17,7 @@
 
 $s_plugin_Relator_description = 'The plugin implements a live search for related issues to support easy relation creation.';
 
-$s_plugin_Relator_related_issue_list_found = 'Searchresults for <b> %1s </b> located in project(s): <b> %2s </b>';
+$s_plugin_Relator_related_issue_list_found = '%1s Searchresult(s) for <b> %2s </b> located in project(s): <b> %3s </b>';
 $s_plugin_Relator_related_issue_list_nores = 'Search for <b> %1s </b> located in project(s): <b> %2s </b> yielded no results.';
 $s_plugin_Relator_any_project              = 'any project';
 

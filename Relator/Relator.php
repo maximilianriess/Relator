@@ -21,7 +21,7 @@ class RelatorPlugin extends MantisPlugin {
         $this->name        = 'Relator';
         $this->description = plugin_lang_get( 'description' );
 
-        $this->version  = '1.1.6';
+        $this->version  = '1.2.0';
         $this->requires = array(
                                   'MantisCore' => '2.14.0',
         );

@@ -17,7 +17,7 @@
 
 $s_plugin_Relator_description = 'Dieses Plugin erlaubt das Erzeugen von Eintrags-Beziehungen anhand der Ticket-Zusammenfassung anstatt der Eingabe der Ticket-ID.';
 
-$s_plugin_Relator_related_issue_list_found = 'Suchergebnisse f&uuml;r <b> %1s </b> in Projekt(en): <b> %2s </b>';
+$s_plugin_Relator_related_issue_list_found = '%1s Suchergebniss(e) f&uuml;r <b> %2s </b> in Projekt(en): <b> %3s </b>';
 $s_plugin_Relator_related_issue_list_nores = 'Die Suche nach<b> %1s </b> in Projekt(en) <b> %2s </b> ergab keine Ergebnisse.';
 $s_plugin_Relator_any_project              = 'alle Projekte';
 

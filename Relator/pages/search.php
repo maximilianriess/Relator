@@ -105,6 +105,8 @@ if($search_value == "") {
     return ""; 
 }
 
+$t_src_bug_id = gpc_get_int( 'src_bug_id' );
+
 $t_filter['search'] = $search_value;
 
 $t_request_id = gpc_get_int( 'request_id' );
@@ -159,33 +161,38 @@ if(count($t_project_ids) == count(current_user_get_accessible_projects()) ) {
 }
 
 
-if(count($t_rows)>0) {
+$resultshtml="";
+$resultcount=0;
+if( count( $t_rows ) > 0 ) {
+    foreach( $t_rows as $t_issue ) {
+	if($t_src_bug_id != "" && $t_issue->id == $t_src_bug_id) {
+		continue;	# do not include the current ticket id	
+	}
+	$resultcount++;
+	$resultshtml.= '<li>';
+	$resultshtml.= '<a class=search_result style="background-color:' . get_status_color( $t_issue->status );
+	$resultshtml.= ';" href="#" onclick="' . string_get_onclick( $t_issue->id ) . '";>';
+	$resultshtml.= $t_issue->id . ": [" . project_get_name($t_issue->project_id) . "] <b>" . $t_issue->summary . "</b>";
+	$resultshtml.= '</a>';
+	$resultshtml.= '</li>';
+    }
+
+}
+
+
+if($resultcount>0) {
 	# inform about amount of hits
 	$html.= '<li style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;">';
-	$html.= sprintf( plugin_lang_get( 'related_issue_list_found' ), $search_value, $t_project_names );
+	$html.= sprintf( plugin_lang_get( 'related_issue_list_found' ), $resultcount, $search_value, $t_project_names );
 	$html.= '</li>';
-} 
-
-if( count( $t_rows )==0 ) {
+} else { 
 	$html.= '<li style="margin-left: 5px; margin-top: 5px; margin-bottom: 5px;">';
 	$html.= sprintf( plugin_lang_get( 'related_issue_list_nores' ), $search_value, $t_project_names );
 	$html.= '</li>';
 }
 
-
-if( count( $t_rows ) > 0 ) {
-    foreach( $t_rows as $t_issue ) {
-	$html .= '<li>';
-	$html .= '<a class=search_result style="background-color:' . get_status_color( $t_issue->status );
-	$html .= ';" href="#" onclick="' . string_get_onclick( $t_issue->id ) . '";>';
-	$html .= $t_issue->id . ": [" . project_get_name($t_issue->project_id) . "] <b>" . $t_issue->summary . "</b>";
-	$html .= '</a>';
-	$html .= '</li>';
-    }
-
-}
-
-$html .= '</ul>';
+$html.= $resultshtml;
+$html.= '</ul>';
 
 
 $t_response['request_id'] = $t_request_id;
